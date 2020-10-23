@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="nav-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9 col-lg-3">
+                            <div class="site-branding">
+
+                                <img src="{% static 'images/logo.png' %}">
+                            </div>
+                        </div>
+
+                        <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
+                            <nav class="site-navigation flex justify-content-end align-items-center">
+                                <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                    <li ><a href="{% url 'App:Home' %}">Register</a></li>
+                                    <li class="current-menu-item"><a href="{% url 'App:Login' %}">Login</a></li>
+                                </ul>
+
+                                <div class="hamburger-menu d-lg-none">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <div class="header-bar-cart">
+                                    <a href="#" class="flex justify-content-center align-items-center"><span aria-hidden="true" class="icon_bag_alt"></span></a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="row">
+    <div class="col-12 col-md-4"></div>
+    <div class="col-12 col-md-4"> <div class="pt-5 ">
+            {% if messages %}
+                 {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        <strong>{{ message }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                 {% endfor %}
+            {% endif %}
+        </div></div>
+    <div class="col-12 col-md-4"></div>
+</div>
+    <section class="pt-5 mt-3">
+        <div class="row pt-5 mt-3">
+            <div class="col-12 col-lg-4 pb-5">
+                <div class="contact-forms">
+                    <h3 class="pb-3 head">Login Form</h3>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+
+
+                            <div class="col-md-12 form-group">
+                                <input type="text" placeholder="Username" name="username" class="form-control pass py-2">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input type="password" placeholder="Password" name="password" class="form-control pass py-2">
+                            </div>
+
+
+                        </div>
+
+                            <div class="col-md-6 form-group">
+                                <input type="submit" value="Login" class="btn btn-primary btn-sm" style="background-color: #f3a90b; padding:3px 25px; border:0px;">
+                            </div>
+                    </form>
+
+                </div><!-- .contact-form -->
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

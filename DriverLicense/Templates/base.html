@@ -1,0 +1,97 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Driving License System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'Assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Assets/css/elegant-fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'Assets/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'Assets/css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Assets/css/styles.css' %}">
+</head>
+
+<body>
+    {% block content %}
+{% endblock %}
+
+    <footer class="site-footer">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3 mt-3">
+                        <div class="foot-about ">
+                            <a class="foot-logo" href="#"><img src="{% static 'images/logo.png' %}" alt=""></a>
+
+                            <p>Research methodology coursework </p>
+
+                            <p class="footer-copyright">
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+
+                                </script> All rights reserved</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
+                        <div class="foot-contact">
+                            <h2>Contact Us</h2>
+
+                            <ul>
+                                <li>Email: researchmethodology</li>
+                                <li>Phone: 070179247</li>
+                                <li>Address: makerere university</li>
+                            </ul>
+                        </div><!-- .foot-contact -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0">
+                        <div class="quick-links flex flex-wrap">
+                            <h2 class="w-100">Quick Links</h2>
+
+                            <ul class="w-50">
+                                <li><a href="#">About </a></li>
+                                <li><a href="#">Terms of Use </a></li>
+                                <li><a href="#">Privacy Policy </a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div><!-- .quick-links -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0">
+                        <div class="follow-us">
+                            <h2>Follow Us</h2>
+
+                            <ul class="follow-us flex flex-wrap align-items-center">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div><!-- .quick-links -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div>
+    </footer><!-- .site-footer -->
+
+
+    <script type='text/javascript' src="{% static 'Assets/js/jquery.js' %}"></script>
+    <script type='text/javascript' src="{% static 'Assets/js/jquery-3.2.1.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'Assets/js/swiper.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'Assets/js/masonry.pkgd.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'Assets/js/jquery.collapsible.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'Assets/js/custom.js' %}"></script>
+    <script type='text/javascript' src="{% static 'Assets/js/main.js' %}"></script>
+    <script type='text/javascript' src="{% static 'Assets/js/bootstrap.min.js' %}"></script>
+{% block scripts %}
+{% endblock scripts %}
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="nav-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9 col-lg-3">
+                            <div class="site-branding">
+
+                                <img src="{% static 'images/logo.png' %}">
+                            </div>
+                        </div>
+
+                        <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
+                            <nav class="site-navigation flex justify-content-end align-items-center">
+                                <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                    <li class="current-menu-item"><a href="{% url 'App:Base' %}">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li class="current-menu-item"><a href="#">Contact</a></li>
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+
+                                <div class="hamburger-menu d-lg-none">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <div class="header-bar-cart">
+                                    <a href="#" class="flex justify-content-center align-items-center"><span aria-hidden="true" class="icon_bag_alt"></span></a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="row">
+    <div class="col-12 col-md-4"></div>
+    <div class="col-12 col-md-4"> <div class="pt-5 ">
+            {% if messages %}
+                 {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        <strong>{{ message }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                 {% endfor %}
+            {% endif %}
+        </div></div>
+    <div class="col-12 col-md-4"></div>
+</div>
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-3">
+            <aside class="left-sidebar">
+              <div class="widget">
+                <h5 class="widgetheading">Forms</h5>
+                <ul class="cat">
+                    <li><a href="{% url 'App:New' %}">New Driver's License</a></li>
+                    <li><a href="{% url 'App:Renew' %}">Renewal</a></li>
+
+                </ul>
+              </div>
+            </aside>
+          </div>
+          <div class="col-12 col-lg-7">
+            <article>
+              <div class="row">
+                <div class="col-12 col-lg-12">
+                  <div class="post-image">
+                    <div class="post-heading">
+                      <h3><a href="#" class="text-orange">THE DIGITAL DIVING PERMIT</a></h3>
+                    </div>
+                    <img src="{% static 'images/bg.png' %}" alt="" />
+                  </div>
+                  <p>
+                      The world is evolving rapidly towards mobile and digital formats for many everyday tasks.
+                      Key drivers for this trend are convenience and ease of use for transactions that require some form of identification.
+                      And one of the most used documents to confirm identity is looking at going down this route - the driver's license.
+                  </p>
+                  <blockquote>
+                    <i class="icon-quote-left"></i>
+                  </blockquote>
+                    <h3><b><u>The convenience of the mobile format</u>​</b>
+                  </h3>
+                    <p> <h4><b>Potential new identification use cases</b></h4>
+</p>
+
+<p>
+    Beyond the critical security aspects, issuing authorities have shown particular interest in the universal convenience of this mobile format:​
+
+                    <li>Convenience for holders, who can travel lighter with a digital driver's license, instantly updatable, on their phone.</li>
+                    <li>Convenience for law enforcement or other parties wanting to verify identity and privileges.</li>
+                    <li>Convenience for issuing authorities who can explore new services needing such a trusted and secure channel for sharing and validating identity.</li>
+
+</p>
+                </div>
+              </div>
+            </article>
+            <!-- author info -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+
+

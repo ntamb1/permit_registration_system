@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="nav-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9 col-lg-3">
+                            <div class="site-branding">
+
+                                <img src="{% static 'images/logo.png' %}">
+                            </div>
+                        </div>
+
+                        <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
+                            <nav class="site-navigation flex justify-content-end align-items-center">
+                                <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                    <li class="current-menu-item"><a href="{% url 'App:Base' %}">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+
+                                <div class="hamburger-menu d-lg-none">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <div class="header-bar-cart">
+                                    <a href="#" class="flex justify-content-center align-items-center"><span aria-hidden="true" class="icon_bag_alt"></span></a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="row">
+    <div class="col-12 col-md-4"></div>
+    <div class="col-12 col-md-4"> <div class="pt-5 ">
+            {% if messages %}
+                 {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        <strong>{{ message }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                 {% endfor %}
+            {% endif %}
+        </div></div>
+    <div class="col-12 col-md-4"></div>
+</div>
+<section>
+        <div class="row">
+            <div class="col-12 col-lg-6 wrap">
+                <div class="contact-form p-5">
+                    <h3 style="font-size:25px;">Renew License</h3>
+                    <form method="post">
+                            {% csrf_token %}
+
+                        <div class="row">
+
+
+                            <div class="col-12 col-md-6 form-group">
+                                <label>Current License ID</label>
+                                <input type="text" placeholder="Current License ID" name="c_id" class="form-control py-2">
+                            </div>
+                            <div class="col-12 col-md-6 form-group">
+                                <label>First Name</label>
+                                <input type="text" placeholder="First Name" name="first_name" class="form-control py-2">
+                            </div>
+
+                            </div>
+
+                            <div class="row">
+                            <div class="col-12 col-md-6 form-group">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Last Name" name="last_name" class="form-control py-2">
+                            </div>
+                            <div class="col-12 col-md-6 form-group">
+                                <label>License Expiry</label>
+                                <input type="text" placeholder="DD / MM / YY" name="expiry_date" class="form-control py-2">
+                            </div>
+                        </div>
+
+
+                        <div class="row row1">
+
+                            <div class="col-12 col-md-6 form-group">
+                                <p><span class="scan">Scanned file of your current License</span></p>
+                                <input type="file"  name="scan" class="form-control py-2">
+                            </div>
+                            <div class="col-12 col-md-6 form-group">
+                                    <p class="p">After Bank payments Attach scanned Receipts</p>
+                                <input type="file"  name="payment_scan" class="form-control py-2">
+                            </div>
+                            <div class="col-12 col-md-12 form-group">
+                                <h6 class="p"><b>After submission, entered data is verified and a Temporary permit is issued after a period on your email</b></h6>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-6 form-group" >
+                                <input type="submit" value="Submit" class="btn btn-secondary btn-sm ml-5 btn-l" style="float:right;">
+                            </div>
+                            <div class=" col-md-6 form-group"  >
+                                <input type="submit" value="Cancel" class="btn btn-secondary btn-sm ml-3 btn-r" style="float:right;">
+                            </div>
+
+                        </div>
+
+                    </form><!-- .contact-form -->
+            </div>
+            </div></div>
+    </section>
+
+{% endblock %}
